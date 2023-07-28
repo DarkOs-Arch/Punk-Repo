@@ -1,0 +1,36 @@
+* DarkOs Punk Repository
+MADE for custom Builds of Emacs/Xanmod Linux Kernel And Others Interesting Packages
+
+* Xanmod Kernel
+Please consider not installing *Linux-Xanmod* kernel *YET*.
+It's not suitable for all machines, and not all kernel modules are compiled.
+Only some that which i choose to compile, i'll see update this page, with
+all compiled modules and provide native builds.
+
+* Emacs
+Emacs has been built with the following features.
+
+- [X] Used mold linker to compile with AOT and JIT.
+- [X] Lucid instead of PGTK (Toolkit)
+- [X] cairo
+- [X] alsa
+- [X] sitter ( tree-sitter )
+- [X] GPM and Xinput2
+
+If you don't want to install Emacs package rather builds yourself.
+You can find this in the [[https://aur.archlinux.org/packages/emacs29-lucid-native-comp-git][AUR]] or in the PKGBUILD directory.
+
+* Add this repository to your arch install.
+#+BEGIN_SRC shell
+  # if you have darkos repository install do ignore the following
+  # command
+  echo "https://darkos-arch.github.io/$repo/$arch" >> /etc/pacman.d/darkos-mirrorlist
+
+  echo "[Punk-Repo]" >> /etc/pacman.conf
+  echo "Include = /etc/pacman.d/darkos-mirrorlist" >> /etc/pacman.conf
+#+END_SRC
+** Add My GPG Key To Verify Builds Integrity.
+#+BEGIN_SRC shell
+  pacman-key -r 84263A08F86B7E99
+  pacman-key --lsign-key 84263A08F86B7E99
+#+END_SRC
